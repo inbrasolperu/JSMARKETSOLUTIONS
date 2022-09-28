@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="view_hr_timesheet_tag_generated_wizard" model="ir.ui.view">
+            <field name="name">Generar Cierre parte de horas</field>
+            <field name="model">hr.timesheet.tag.generated</field>
+            <field name="arch" type="xml">
+                <form string="Generar consolidado parte de horas">
+                    <group>
+                        <group>
+                            <field name="date_begin" />
+                            <field name="date_end"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="generated_report" string="Generar" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_hr_timesheet_tag_generated_wizard" model="ir.actions.act_window">
+            <field name="name">Change Date Expense Sheet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.timesheet.tag.generated</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_hr_timesheet_tag_generated_wizard"
+                  name="Consolidado parte horas"
+                  parent="hr_timesheet.menu_timesheets_reports"
+                  action="action_hr_timesheet_tag_generated_wizard"
+                  groups="hr_attendance.group_hr_attendance_manager"
+        />
+
+    </data>
+
+</odoo>

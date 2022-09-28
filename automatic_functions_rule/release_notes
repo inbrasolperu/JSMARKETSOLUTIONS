@@ -1,0 +1,8 @@
+Version 13.0.1.0 - 	28 April 20
+===================================
+
+1. Initial release
+
+	- Add get_inputs function to get and add other inputs on hr.payslip model.
+	- Delete records equal to zero on models hr.payslip.worked_days, hr.payslip.input, hr.payslip.line referenced by hr.payslip model.
+	- Override compute_sheet function because want avoiding create records quantity on zero.

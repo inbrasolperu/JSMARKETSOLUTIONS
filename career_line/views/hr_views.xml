@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_contract_form_inherit_career_line" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit.career_line</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_payroll.hr_contract_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="replace">
+                <field name="employee_id" required="1"/>
+            </field>
+            <field name="job_id" position="replace">
+                <field name="job_id" required="0" readonly="1"/>
+            </field>
+            <field name="department_id" position="replace">
+                <field name="department_id" required="0" readonly="1"/>
+            </field>
+            <xpath expr="//notebook/page[@name='information']/group" position='before'>
+                <group string="Línea de Carrera" name="career_line" groups="hr_contract.group_hr_contract_manager">
+                    <div>
+                        <field name="career_line_ids" required='1' context="{'default_contract_id': active_id}" attrs="{'invisible': [('wage_type', '=', 'hourly')]}"/>
+                    </div>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[@name='information_salary_hourly']/group" position='before'>
+                <group string="Línea de Carrera" name="career_line" groups="hr_contract.group_hr_contract_manager">
+                    <div>
+                        <field name="career_line_ids" required='1' context="{'default_contract_id': active_id}" attrs="{'invisible': [('wage_type', '!=', 'hourly')]}"/>
+                    </div>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[@name='information']/group/group/div/field[@name='wage']" position='replace'>
+                <field name="wage" nolabel="1" readonly="1" required="0"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='information_salary_hourly']/group/group/div/field[@name='hourly_wage']"
+                   position='replace'>
+                <field name="hourly_wage" nolabel="1" readonly="1" required="0"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="career_line_view_form" model="ir.ui.view">
+        <field name="name">career.line.form</field>
+        <field name="model">career.line</field>
+        <field name="arch" type="xml">
+            <form edit="False">
+                <sheet>
+                    <group>
+                        <field name="movement_date"/>
+                        <field name="job_id"/>
+                        <field name="wage"/>
+                        <field name="motive"/>
+                        <field name="contract_id"/>
+                        <field name="employee_id"/>
+                        <field name="currency_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="career_line_view_tree" model="ir.ui.view">
+        <field name="name">career.line.tree</field>
+        <field name="model">career.line</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="movement_date"/>
+                <field name="job_id"/>
+                <field name="wage"/>
+                <field name="motive"/>
+                <field name="contract_id" invisible="1"/>
+                <field name="employee_id" invisible="1"/>
+                <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

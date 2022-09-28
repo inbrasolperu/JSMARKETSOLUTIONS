@@ -1,0 +1,7 @@
+Version 13.0.1.0 - 	28 April 20
+===================================
+
+Initial release
+
+	- Override _get_worked_day_lines function on hr.payslip model to add calc_extra_days calc_extra_days and only override this one in some case.
+	- Add the attribute translate=True on field name in hr.work.entry.type model to translate their records names.

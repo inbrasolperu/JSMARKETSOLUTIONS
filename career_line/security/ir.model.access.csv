@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acccess_career_line_hr_contract_manager,career.line,model_career_line,hr_contract.group_hr_contract_manager,1,1,1,1
