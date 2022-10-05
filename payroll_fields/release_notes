@@ -1,0 +1,12 @@
+Version 13.0.1.1 - 	03 august 20
+===================================
+
+Fix rule over hr_payslip_worked_days and hr_payslip_input to avoid conflict with archived records
+
+Version 13.0.1.0 - 	28 April 20
+===================================
+
+1. Initial release
+
+	- Create many fields on hr.payslip, hr.payslip.line, hr.payslip.worked_days, hr.payslip.input to filter on their views.
+	- Get six month before based on new field date_start in set_filter_six_month_before function.
